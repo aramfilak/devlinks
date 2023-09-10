@@ -8,7 +8,8 @@ import {
     uploadProfileImage
 } from './user.service';
 import { authenticate } from '../middlewares/auth';
-import { upload } from '../config/multer';
+import { upload } from '../middlewares/multer';
+
 const userRouter = Router();
 
 userRouter.post('/uploads', upload.single('profileImage'), authenticate, uploadProfileImage);
