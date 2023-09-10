@@ -1,0 +1,18 @@
+.page-not-found-404 {
+  height: 100vh;
+  .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-cl-light);
+
+    img {
+      max-width: 42rem;
+      animation: upDownAnimation 2.5s ease-in-out infinite;
+      border-radius: 2rem;
+    }
+  }
+}

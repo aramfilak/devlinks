@@ -1,0 +1,103 @@
+@use '../../sass/abstracts/' as *;
+.start-page {
+  background-color: var(--bg-cl-light);
+
+  .container {
+    background-color: var(--bg-cl-light);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 2rem;
+
+    nav {
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--comp-cl);
+      border-radius: 0 0 var(--comp-rad) var(--comp-rad);
+      ul {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--comp-cl);
+      border-radius: var(--comp-rad);
+      padding: 4rem;
+
+      h1 {
+        color: var(--ac-cl-1);
+        font-size: 4.5rem;
+        font-weight: 700;
+      }
+      h2 {
+        color: var(--font-dark);
+        font-weight: 700;
+        font-size: 3rem;
+        text-align: center;
+        margin-block: 1rem;
+      }
+
+      .start-page-illustration {
+        width: min(100%, 30rem);
+        border-radius: var(--comp-rad);
+        animation: upDownAnimation 2.5s ease-in-out infinite;
+      }
+    }
+
+    footer {
+      padding: 2rem;
+      background-color: var(--comp-cl);
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      line-height: 1.5;
+      font-weight: 700;
+      border-radius: var(--comp-rad) var(--comp-rad) 0 0;
+      position: relative;
+
+      .links {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        svg {
+          width: (100%, 10rem);
+        }
+        p {
+          display: flex;
+          gap: 0.1rem;
+          a {
+            color: var(--ac-cl-1);
+            display: flex;
+            font-weight: 500;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes upDownAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

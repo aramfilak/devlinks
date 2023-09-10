@@ -1,0 +1,95 @@
+@use '../abstracts/index' as *;
+
+//*******************************
+//********** VARIABLES **********
+//*******************************
+
+:root {
+  --ac-cl-1: #633cff;
+  --ac-cl-2: #beadff;
+  --ac-cl-3: #efebff;
+
+  --font-dark: #333333;
+  --font-normal: #737373;
+  --font-light: #fff;
+
+  --bg-cl: #eee;
+  --bg-cl-light: #fafafa;
+  --comp-cl: #fff;
+  --err-cl: #d00000;
+
+  --comp-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.05);
+
+  --comp-rad: 0.75rem;
+  --el-rad: 0.5rem;
+}
+
+body {
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+html {
+  font-size: 80%;
+  @include mq(md) {
+    font-size: 100%;
+  }
+}
+//*******************************
+//********* container ***********
+//*******************************
+.container {
+  @include container(100rem, 1.5rem);
+}
+
+//*******************************
+//************ HEADING **********
+//*******************************
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: toRem(32);
+}
+
+h6 {
+  font-size: toRem(16);
+}
+
+//*******************************
+//********** PARAGRAPH **********
+//*******************************
+
+p {
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--font-normal);
+}
+p.small {
+  font-size: toRem(12);
+}
+
+p.medium {
+  font-size: toRem(16);
+}
+
+//*******************************
+//********** OTHERS *************
+//*******************************
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: var(--font-dark);
+}

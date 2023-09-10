@@ -1,0 +1,1 @@
+export { axiosUser } from './axios';

@@ -1,0 +1,12 @@
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--comp-cl);
+  border-radius: var(--comp-rad);
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
+}

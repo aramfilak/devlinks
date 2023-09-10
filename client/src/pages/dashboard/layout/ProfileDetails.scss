@@ -1,0 +1,129 @@
+@use '../../../sass/abstracts/' as *;
+
+header {
+  margin-bottom: 2.5rem;
+}
+
+.profile-image-group-wrapper,
+.inputs-group-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--bg-cl-light);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-image-group-wrapper {
+  position: relative;
+
+  input[type='file'] {
+    display: none;
+  }
+  .fake-label {
+    margin-bottom: 1rem;
+  }
+  label {
+    overflow: hidden;
+    position: relative;
+    background-color: var(--ac-cl-3);
+    border-radius: var(--el-rad);
+    border: none;
+    width: toRem(193);
+    height: toRem(193);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+
+    p {
+      transition: all 0.3s;
+
+      color: var(--ac-cl-1);
+      font-weight: 700;
+    }
+    &::before {
+      z-index: -1;
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      &::before {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        color: var(--font-light);
+        transform: scale(1.1);
+      }
+      svg > path {
+        transition: all 0.3s;
+        fill: var(--font-light);
+      }
+    }
+  }
+
+  p:last-child {
+    font-size: toRem(12);
+  }
+
+  @include mq(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    label {
+      margin-left: auto;
+    }
+    p:first-child {
+      min-width: fit-content;
+    }
+  }
+}
+
+.inputs-group-wrapper {
+  margin-bottom: 7rem;
+  .input-group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      min-width: 30%;
+    }
+  }
+  @include mq(md) {
+    .input-group {
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      label {
+        min-width: 30%;
+      }
+    }
+  }
+}
+
+.submit-btn-wrapper {
+  padding-block: 2.5rem;
+  width: 100%;
+  border-top: 1px solid #d9d9d9;
+
+  @include mq(md) {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      max-width: toRem(100);
+    }
+  }
+}
