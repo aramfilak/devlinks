@@ -14,6 +14,7 @@ import RequireAuth from './components/RequireAuth';
 import { useEffect } from 'react';
 import { useAuth } from './store';
 import { isPublicPath } from './utils/helpers';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const { authToken } = useAuth();
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <main>
+      <Analytics />
       <Routes>
         {/* Public Routes */}
         <Route path={START.path} element={START.element} />

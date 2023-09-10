@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from 'react-hot-toast';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -28,7 +27,6 @@ const theme = extendTheme({
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Analytics />
     <Toaster />
     <ChakraProvider theme={theme}>
       <BrowserRouter>

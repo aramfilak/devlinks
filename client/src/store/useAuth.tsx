@@ -102,8 +102,6 @@ const useAuth = create<UseAuth>((set, get) => ({
         headers: { Authorization: authToken },
       });
 
-      const user = response.data.user;
-
       set({ user: response.data.user });
       return { success: true, message: response.data.message };
     } catch (error) {
