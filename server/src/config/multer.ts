@@ -1,8 +1,11 @@
 import multer from 'multer';
+import path from 'path';
+
+const tempImagePath = path.join(__dirname, '../tmp');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, __dirname);
+        cb(null, tempImagePath);
     },
     filename: function (req, file, cb) {
         cb(null, Date.now() + '-' + file.originalname);

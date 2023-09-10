@@ -17,7 +17,7 @@ async function uploadProfileImage(req: Request, res: Response) {
     const id = req.user?.id;
     // @ts-ignore
     const tempImage = req.file.path;
-    console.log(tempImage);
+
     if (!tempImage) {
         throw new BadRequestError('No image to upload');
     }
@@ -29,10 +29,6 @@ async function uploadProfileImage(req: Request, res: Response) {
     });
 
     fs.unlinkSync(tempImage);
-
-    if (!id) {
-        throw new BadRequestError('Invalid or missing user ID');
-    }
 
     const user = await User.findByIdAndUpdate(
         id,
