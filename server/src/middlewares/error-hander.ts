@@ -13,7 +13,7 @@ function errorHandler(err: Error, req: Request, res: Response, next: NextFunctio
     if (process.env.NODE_ENV === 'development') {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: err });
     } else {
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: err });
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'SERVER ERROR 404' });
     }
 }
 
