@@ -1,5 +1,5 @@
 import { Button } from '@chakra-ui/react';
-import { IDevLinksIL, ILogoDark, ICheck, ILogoMini } from '../../assets/Icons';
+import { IDevLinksIL, ILogoDark, ILogoMini } from '../../assets/Icons';
 import './Start.scss';
 import useScreenSize from '../../hooks/useScreenSize';
 import { Link, useNavigate } from 'react-router-dom';

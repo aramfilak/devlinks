@@ -4,7 +4,7 @@ import { useAuth } from '../store';
 import { IUpload } from '../assets/Icons';
 
 function ImageUpload() {
-  const { user, uploadImage, authToken } = useAuth();
+  const { user, uploadImage } = useAuth();
 
   const handleProfileImageUpload = async ({ target: { files } }: React.ChangeEvent<HTMLInputElement>) => {
     const file = files ? files[0] : null;
@@ -13,10 +13,9 @@ function ImageUpload() {
 
     const formData = new FormData();
     formData.append('profileImage', file);
+    const isUploadToastId = toast.loading('Uploading...');
 
     const { success, message } = await uploadImage(formData);
-
-    const isUploadToastId = toast.loading('Uploading...');
 
     if (success) {
       toast.success(message);

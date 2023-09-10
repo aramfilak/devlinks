@@ -1,13 +1,5 @@
 // PlatformMenu.js
-import {
-  FormControl,
-  FormErrorMessage,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuDivider,
-  Button,
-} from '@chakra-ui/react';
+import { FormControl, FormErrorMessage, Menu, MenuButton, MenuList, MenuDivider, Button } from '@chakra-ui/react';
 import { FieldMetaProps, FormikProps } from 'formik';
 import { IArrowDown } from '../assets/Icons';
 import { all, business, cloud, dev, gaming, socialMedia } from '../data/platforms';

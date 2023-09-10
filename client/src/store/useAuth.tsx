@@ -122,9 +122,9 @@ const useAuth = create<UseAuth>((set, get) => ({
       });
 
       set({ user: response.data.user });
-      return { success: false, message: 'Image uploaded successfully' };
+      return { success: true, message: 'Image uploaded successfully 📷' };
     } catch (error) {
-      return { success: false, message: 'Failed to upload the image' };
+      return { success: false, message: 'Failed to upload the image 📸' };
     }
   },
 }));

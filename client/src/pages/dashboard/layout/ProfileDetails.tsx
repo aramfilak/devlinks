@@ -1,5 +1,4 @@
 import './ProfileDetails.scss';
-import { IUpload } from '../../../assets/Icons';
 import { Form, Field, Formik, FieldProps, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -13,9 +12,7 @@ import {
   Textarea,
 } from '@chakra-ui/react';
 import { useAuth } from '../../../store';
-import { useEffect } from 'react';
 import toast from 'react-hot-toast';
-import { axiosUser } from '../../../utils';
 import ImageUpload from '../../../components/ImageUpload';
 
 const profileDetailsSchema = Yup.object({
