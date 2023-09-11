@@ -6,8 +6,8 @@ import { all, business, cloud, dev, gaming, socialMedia } from '../data/platform
 import ChakraMenuGroup from './ChakraMenuGroup';
 
 interface PlatformMenuProps<T> {
-  meta: FieldMetaProps<string>; // Replace with your actual FieldMetaProps type
-  form: FormikProps<T>; // Replace with your actual FormikProps type
+  meta: FieldMetaProps<string>;
+  form: FormikProps<T>;
   index: number;
 }
 

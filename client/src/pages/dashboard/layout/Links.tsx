@@ -53,7 +53,6 @@ interface Values {
 function Links() {
   const { user, updateUser } = useAuth();
   const handleSubmit = async ({ links }: Values, { setSubmitting }: FormikHelpers<Values>) => {
-    console.log(links);
     const { success, message } = await updateUser({ links: links });
 
     if (success) {
