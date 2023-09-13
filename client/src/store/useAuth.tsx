@@ -17,6 +17,7 @@ interface UseAuth {
   getUser: () => Promise<RequestStatus>;
   updateUser: (updates: Partial<User>) => Promise<RequestStatus>;
   uploadImage: (data: FormData) => Promise<RequestStatus>;
+  removeAuthToken: () => void;
 }
 
 interface AuthResponse extends AxiosResponse {
@@ -124,6 +125,10 @@ const useAuth = create<UseAuth>((set, get) => ({
     } catch (error) {
       return { success: false, message: 'Failed to upload the image 📸' };
     }
+  },
+  removeAuthToken: () => {
+    localStorage.removeItem('authToken');
+    set({ authToken: null });
   },
 }));
 

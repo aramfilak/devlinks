@@ -1,27 +1,26 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../store';
 import { START } from '../data/navlinks';
-import { useEffect } from 'react';
-import ChakraSpinner from './ChakraSpinner';
 
 function RequireAuth() {
-  const { user, authToken, getUser } = useAuth();
-  const navigate = useNavigate();
+  const { user, authToken, removeAuthToken, getUser } = useAuth();
 
-  useEffect(() => {
-    if (authToken && !user) {
-      (async function fetchUser() {
-        const res = await getUser();
-        if (!res.success) {
-          navigate(START.path);
-        }
-      })();
+  const fetchUser = async () => {
+    const res = await getUser();
+    if (res.success) {
+      return <Outlet />;
+    } else {
+      removeAuthToken();
     }
-  }, [user]);
+  };
 
-  if (!user) return <ChakraSpinner />;
-
-  return <Outlet />;
+  if (authToken && !user) {
+    fetchUser();
+  } else if (user) {
+    return <Outlet />;
+  } else {
+    return <Navigate to={START.path} />;
+  }
 }
 
 export default RequireAuth;
