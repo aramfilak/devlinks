@@ -158,7 +158,9 @@ async function signUp(req: Request, res: Response) {
     // Generate token
     const token = generateJWT(user.id);
 
-    res.status(StatusCodes.CREATED).json({ message: 'Signup success', token, user: user });
+    const sanitizedUser = sanitizeUser(user);
+
+    res.status(StatusCodes.CREATED).json({ message: 'Signup success', token, user: sanitizedUser });
 }
 
 /**----------------------------------------------------------------
@@ -189,7 +191,10 @@ async function login(req: Request, res: Response) {
 
     // Generate token
     const token = generateJWT(user.id);
-    return res.status(200).json({ message: 'Logged in successfully', token, user: user });
+
+    const sanitizedUser = sanitizeUser(user);
+
+    return res.status(200).json({ message: 'Logged in successfully', token, user: sanitizedUser });
 }
 
 export { getUser, updateUser, signUp, login, getUserById, uploadProfileImage };

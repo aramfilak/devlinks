@@ -42,7 +42,7 @@ function Preview({ isPublic }: Props) {
   }
 
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(`https://devlinks-client.vercel.app/public-preview/${userData?.id}`);
+    navigator.clipboard.writeText(`https://devlinks-client.vercel.app/public-preview/${user?.id}`);
     toast.success('Copy to clipboard');
   };
 
@@ -72,7 +72,7 @@ function Preview({ isPublic }: Props) {
                     backgroundColor={'devlinks.--ac-cl-1'}
                     color={'devlinks.--font-light'}
                   >
-                    Share Link
+                    Copy Share Link
                   </Button>
                 </li>
               </ul>
