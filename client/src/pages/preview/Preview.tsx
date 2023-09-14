@@ -72,7 +72,7 @@ function Preview({ isPublic }: Props) {
                     backgroundColor={'devlinks.--ac-cl-1'}
                     color={'devlinks.--font-light'}
                   >
-                    Copy Share Link
+                    Copy Profile Link
                   </Button>
                 </li>
               </ul>
