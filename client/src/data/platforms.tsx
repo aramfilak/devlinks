@@ -70,7 +70,7 @@ const gaming: PlatForm[] = [
     name: 'Playstation',
     icon: <SiPlaystation />,
     color: '#003791',
-    url: ' playstation.com',
+    url: 'playstation.com',
   },
   { name: 'XBox', icon: <SiXbox />, color: '#107C10', url: 'xbox.com' },
 ];
