@@ -128,7 +128,7 @@ const useAuth = create<UseAuth>((set, get) => ({
   },
   removeAuthToken: () => {
     localStorage.removeItem('authToken');
-    set({ authToken: null });
+    set({ authToken: null, user: null });
   },
 }));
 
