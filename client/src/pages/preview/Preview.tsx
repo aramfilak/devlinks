@@ -1,6 +1,6 @@
 import './Preview.scss';
 import { Button } from '@chakra-ui/react';
-import { LINKS, NOT_FOUND } from '../../data/navlinks';
+import { NOT_FOUND } from '../../data/navlinks';
 import { useNavigate, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import avatar from '../../assets/avatar-svgrepo-com.svg';
@@ -55,7 +55,7 @@ function Preview({ isPublic }: Props) {
               <ul>
                 <li>
                   <Button
-                    onClick={() => navigate(LINKS.path)}
+                    onClick={() => navigate(-1)}
                     variant="outline"
                     type="submit"
                     borderColor={'devlinks.--ac-cl-1'}
