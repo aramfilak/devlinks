@@ -5,7 +5,7 @@ import { StatusCodes } from 'http-status-codes';
 import { generateJWT, isInvalidPasswordFormat, sanitizeUser } from '../utils';
 import bcrypt from 'bcryptjs';
 import { v2 as cloudinary } from 'cloudinary';
-import fs from 'fs';
+
 /**----------------------------------------------------------------
  * @description Upload profile image
  * @access private
