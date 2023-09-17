@@ -25,10 +25,9 @@ async function uploadProfileImage(req: Request, res: Response) {
     const result = await cloudinary.uploader.upload(tempImage, {
         folder: 'devlinks-users',
         unique_filename: true,
-        resource_type: 'auto'
+        resource_type: 'auto',
+        allowed_formats: ['jpg', 'png']
     });
-
-    fs.unlinkSync(tempImage);
 
     const user = await User.findByIdAndUpdate(
         id,
